@@ -12,8 +12,8 @@ links = ["http://www.gld.gov.hk/egazette/pdf/%s/%s" % (name.split("_")[0], name.
 responses = []
 count = 0
 for pdf, link in zip(pdfs, links):
-    if count % 1000 == 0:
-        print "Fetched %s document.." % count
+    if count % 100 == 0:
+        print "Fetched %s documents.." % count
     count += 1
     responses.append(requests.get(link, stream=True))
 
