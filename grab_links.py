@@ -11,7 +11,7 @@ response = requests.get("http://data.jmsc.hku.hk/hongkong/gazette/pdfs/")
 soup = BeautifulSoup(response.text, parse_only=SoupStrainer("a"))
 
 pdfs = [a.attrs["href"] for a in soup.findAll("a") if a.attrs["href"].endswith(".pdf")]
-existing = [filename for filename in os.listdir(os.getcwd()) if filename.endswith(".pdf")]
+existing = [filename for filename in os.listdir(os.getcwd()+"/pdfs") if filename.endswith(".pdf")]
 assert len(set(pdfs)) == len(pdfs)
 assert len(set(existing)) == len(existing)
 
