@@ -8,5 +8,5 @@ cd ..
 python find_unconverted.py    # generate a list of pdf files that need to be converted
 
 cd pdfs
-parallel pdftotext < pdfs_to_convert.txt    # convert the files
+parallel pdftotext < ../pdfs_to_convert.txt    # convert the files
 find . -type f -name "*.txt" -exec mv \{\} ../raw_texts \;    # move them to their proper directory
